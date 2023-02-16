@@ -38,6 +38,8 @@ import { LeaderService } from './services/leader.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
+import { baseURL } from './shared/baseurl';
+
 
 @NgModule({
   declarations: [
@@ -76,7 +78,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
   providers: [ 
     DishService,
     PromotionService,
-    LeaderService
+    LeaderService,
+    { provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [ LoginComponent ],
   bootstrap: [AppComponent]
